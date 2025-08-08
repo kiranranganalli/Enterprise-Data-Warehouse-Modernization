@@ -1,0 +1,5 @@
+SELECT
+  { [Measures].[Sales Amount], [Measures].[Gross Margin] } ON COLUMNS,
+  NON EMPTY ([Product].[Category].[Category].Members) ON ROWS
+FROM [Sales]
+WHERE ([Date].[Calendar].[Calendar Year].&[2025])

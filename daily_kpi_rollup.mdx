@@ -1,0 +1,7 @@
+WITH
+  MEMBER [Measures].[Avg Order Value] AS [Measures].[Sales Amount] / [Measures].[Order Count]
+SELECT
+  { [Measures].[Order Count], [Measures].[Sales Amount], [Measures].[Avg Order Value] } ON COLUMNS,
+  NON EMPTY ([Date].[Calendar].[Date].Members) ON ROWS
+FROM [Sales]
+WHERE ([Date].[Calendar].[Calendar Year].&[2025])

@@ -1,0 +1,9 @@
+WITH
+  MEMBER [Measures].[Gross Margin] AS (
+    [Measures].[Sales Amount] - [Measures].[Unit Cost] * [Measures].[Quantity]
+  )
+SELECT
+  { [Measures].[Sales Amount], [Measures].[Quantity], [Measures].[Gross Margin] } ON COLUMNS,
+  { [Date].[Calendar].[Calendar Year].CURRENTMEMBER } ON ROWS
+FROM [Sales]
+WHERE ([Date].[Calendar].[Calendar Year].&[2025])
