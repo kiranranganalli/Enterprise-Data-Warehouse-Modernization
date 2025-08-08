@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Cube name="Sales">
+  <Dimensions>
+    <Dimension name="Date">
+      <Hierarchy name="Calendar">
+        <Level name="Year"/>
+        <Level name="Quarter"/>
+        <Level name="Date"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Product">
+      <Hierarchy name="Category">
+        <Level name="Category"/>
+        <Level name="Product"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Customer">
+      <Hierarchy name="Region">
+        <Level name="Region"/>
+        <Level name="Customer"/>
+      </Hierarchy>
+    </Dimension>
+  </Dimensions>
+  <Measures>
+    <Measure name="Sales Amount" aggregator="sum"/>
+    <Measure name="Quantity" aggregator="sum"/>
+    <Measure name="Unit Cost" aggregator="avg"/>
+  </Measures>
+</Cube>
